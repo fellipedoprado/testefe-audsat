@@ -1,0 +1,32 @@
+.global_header {
+    background-color: #003040;
+    height: 64px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo_img {
+    max-width: 114px;
+    max-height: 64px;
+}
+
+.nav_bttns_group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px
+}
+
+.nav_bttn {
+    color: #F2EFE9;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav_bttn_active {
+    text-decoration: underline;
+}
