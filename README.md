@@ -1,27 +1,30 @@
-# TestefeAudsat
+# Teste frontend Audsat
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
+O projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 17.0.10.
 
-## Development server
+## Baixando as dependências
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Execute `npm i` na pasta raiz do projeto para baixar as dependências do projeto.
 
-## Code scaffolding
+## Servidor de desenvolvimento
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute `ng serve` para subir um servidor de desenvolvimento localmente. Navegue até `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você alterar algum dos arquivos de origem.
 
-## Build
+## Executando testes unitários
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Execute `ng test` para executar os testes de unidade via [Karma](https://karma-runner.github.io).
 
-## Running unit tests
+## Principais recursos
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Os principais recursos usados foram:
 
-## Running end-to-end tests
+- Angular 17
+- NGRX 17
+- Angular Material 17
+- SASS
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Desafios
 
-## Further help
+Os principais desafios encontrados foram:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Configuração do controle de estado

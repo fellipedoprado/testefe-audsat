@@ -1,1 +1,58 @@
-<p>post-history works!</p>
+<section>
+    <h1>Posts do Usuário</h1>
+    <div class="posts_container">
+        <mat-card class="example-card" *ngIf="user !== undefined">
+            <mat-card-header class="card_header">
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{user.name}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <ul>
+                    <li>username: {{user.username}}</li>
+                    <li>e-mail: {{user.email}}</li>
+                    <li>phone: {{user.phone}}</li>
+                    <li>website: {{user.website}}</li>
+                    <li>company: {{user.company.name}}</li>
+                    <li>address: {{user.address.street + ', ' + user.address.suite + ', ' + user.address.city + ". " +
+                        user.address.zipcode}}</li>
+                </ul>
+            </mat-card-content>
+        </mat-card>
+        <mat-accordion>
+            <mat-expansion-panel (opened)="openTitle(post)" (closed)="closeTitle()" *ngFor="let post of posts">
+                <mat-expansion-panel-header [collapsedHeight]="collapsedHeight">
+                    <mat-panel-title>
+                        {{post.title}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        {{post.body}}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                    <ng-template [ngIf]="comments.length > 0" [ngIfElse]="error">
+                        <b>Comentarios do Post</b>
+                        <ul>
+                            <ng-template ngFor let-comment [ngForOf]="comments">
+                                <li>
+                                    <b>{{comment.name}}</b>({{comment.email}}):
+                                    <br>
+                                    {{comment.body}}
+                                </li>
+                                <mat-divider></mat-divider>
+                            </ng-template>
+                        </ul>
+                        <button mat-fab extended color="primary" (click)="deletePost(post)">
+                            <mat-icon>delete</mat-icon>
+                            excluir post
+                        </button>
+                    </ng-template>
+
+                    <ng-template #error>
+                        <p>not found</p>
+                    </ng-template>
+                </ng-template>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</section>
